@@ -19,7 +19,7 @@ begin
         nuggets: '~> 1.4'
       },
 
-      required_ruby_version: '>= 1.9.3'
+      required_ruby_version: '>= 2.1'
     }
   }}
 rescue LoadError => err
