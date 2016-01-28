@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class PageRank - page_rank Application documentation (v0.1.0)</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Object
+  
+</div>
+
+    <div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">Enumerable</span>
+  
+  
+  </ul>
+</div>
+
+    <div id="extends-section" class="nav-section">
+  <h3>Extended With Modules</h3>
+
+  <ul class="link-list">
+    
+  
+    <li><span class="extend">Forwardable</span>
+  
+  
+  </ul>
+</div>
+
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-from_hash">::from_hash</a>
+    
+    <li ><a href="#method-c-from_json">::from_json</a>
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-c-sortkey">::sortkey</a>
+    
+    <li ><a href="#method-i-3C-3C">#&lt;&lt;</a>
+    
+    <li ><a href="#method-i-5B-5D-3D">#[]=</a>
+    
+    <li ><a href="#method-i-each">#each</a>
+    
+    <li ><a href="#method-i-inspect">#inspect</a>
+    
+    <li ><a href="#method-i-iterate">#iterate</a>
+    
+    <li ><a href="#method-i-order">#order</a>
+    
+    <li ><a href="#method-i-rank">#rank</a>
+    
+    <li ><a href="#method-i-seed">#seed</a>
+    
+    <li ><a href="#method-i-to_json">#to_json</a>
+    
+    <li ><a href="#method-i-to_table">#to_table</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-PageRank">
+  <h1 id="class-PageRank" class="class">
+    class PageRank
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+      
+        <dt id="DEFAULT_CONVERGENCE">DEFAULT_CONVERGENCE
+        
+        <dd>
+        
+      
+        <dt id="DEFAULT_DAMPING_FACTOR">DEFAULT_DAMPING_FACTOR
+        
+        <dd>
+        
+      
+        <dt id="DEFAULT_MAX_ITERATIONS">DEFAULT_MAX_ITERATIONS
+        
+        <dd>
+        
+      
+        <dt id="VERSION">VERSION
+        
+        <dd>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-convergence" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">convergence</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-damping_factor" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">damping_factor</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-dangling_nodes" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">dangling_nodes</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-divergence" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">divergence</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-initialization_vector" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">initialization_vector</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-iterations" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">iterations</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-matrix" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">matrix</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-max_iterations" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">max_iterations</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-ranking" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">ranking</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-size" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">size</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-from_hash" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">from_hash</span><span
+            class="method-args">(hash, *args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="from_hash-source">
+            <pre><span class="ruby-comment"># File lib/page_rank.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">from_hash</span>(<span class="ruby-identifier">hash</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">s</span> = <span class="ruby-identifier">hash</span>.<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">uniq</span>
+  <span class="ruby-identifier">new</span>(<span class="ruby-identifier">s</span>.<span class="ruby-identifier">size</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>).<span class="ruby-identifier">seed</span>(<span class="ruby-identifier">s</span>.<span class="ruby-identifier">sort_by</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">sortkey</span>(<span class="ruby-identifier">k</span>) }) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-from_json" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">from_json</span><span
+            class="method-args">(path, *args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="from_json-source">
+            <pre><span class="ruby-comment"># File lib/page_rank.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">from_json</span>(<span class="ruby-identifier">path</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">from_hash</span>(<span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">path</span>)), <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(size, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/page_rank.rb, line 66</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">size</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-ivar">@size</span>, <span class="ruby-ivar">@idmap</span>, <span class="ruby-ivar">@matrix</span>, <span class="ruby-ivar">@iterations</span>, <span class="ruby-ivar">@ranking</span>, <span class="ruby-ivar">@divergence</span> =
+    <span class="ruby-identifier">size</span>, <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">idmap</span>(<span class="ruby-value">-1</span>), <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">zeros</span>(<span class="ruby-identifier">size</span>), <span class="ruby-value">0</span>, [], []
+
+  <span class="ruby-ivar">@dangling_nodes</span>, <span class="ruby-ivar">@initialization_vector</span> =
+    <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector</span><span class="ruby-operator">::</span><span class="ruby-constant">Col</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-identifier">size</span>).<span class="ruby-identifier">set_all</span>(<span class="ruby-value">1</span>),
+    <span class="ruby-constant">GSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Vector</span><span class="ruby-operator">::</span><span class="ruby-constant">Col</span>.<span class="ruby-identifier">alloc</span>(<span class="ruby-identifier">size</span>).<span class="ruby-identifier">set_all</span>(<span class="ruby-constant">Rational</span>(<span class="ruby-value">1</span>, <span class="ruby-identifier">size</span>))
+
+  <span class="ruby-ivar">@convergence</span>    = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:convergence</span>,    <span class="ruby-constant">DEFAULT_CONVERGENCE</span>)
+  <span class="ruby-ivar">@max_iterations</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:max_iterations</span>, <span class="ruby-constant">DEFAULT_MAX_ITERATIONS</span>)
+  <span class="ruby-ivar">@damping_factor</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:damping_factor</span>, <span class="ruby-constant">DEFAULT_DAMPING_FACTOR</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="private-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-sortkey" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">sortkey</span><span
+            class="method-args">(k)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="sortkey-source">
+            <pre><span class="ruby-comment"># File lib/page_rank.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">sortkey</span>(<span class="ruby-identifier">k</span>)
+  <span class="ruby-constant">Float</span>(<span class="ruby-identifier">k</span>)
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">TypeError</span>, <span class="ruby-constant">ArgumentError</span>
+  <span class="ruby-identifier">k</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-3C-3C" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">&lt;&lt;</span><span
+            class="method-args">(hash)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="3C-3C-source">
+            <pre><span class="ruby-comment"># File lib/page_rank.rb, line 110</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">&lt;&lt;</span>(<span class="ruby-identifier">hash</span>)
+  <span class="ruby-identifier">hash</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">v</span> }
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-5B-5D-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]=</span><span
+            class="method-args">(k, v)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="5B-5D-3D-source">
+            <pre><span class="ruby-comment"># File lib/page_rank.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]=</span>(<span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span>)
+  <span class="ruby-identifier">w</span> = <span class="ruby-constant">Rational</span>(<span class="ruby-value">1</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">size</span>)
+  <span class="ruby-identifier">dangling_nodes</span>[<span class="ruby-identifier">i</span> = <span class="ruby-identifier">id</span>(<span class="ruby-identifier">k</span>)] = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">v</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">l</span><span class="ruby-operator">|</span> <span class="ruby-identifier">matrix</span>[<span class="ruby-identifier">i</span>, <span class="ruby-identifier">id</span>(<span class="ruby-identifier">l</span>)] = <span class="ruby-identifier">w</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-each" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each</span><span
+            class="method-args">() { |key(k), map! { |l| key(l) }| ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="each-source">
+            <pre><span class="ruby-comment"># File lib/page_rank.rb, line 133</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">each</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">enum_for</span>(<span class="ruby-identifier">__method__</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block_given?</span>
+
+  <span class="ruby-identifier">index</span> = <span class="ruby-value">-1</span>
+
+  <span class="ruby-identifier">matrix</span>.<span class="ruby-identifier">each_row</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span> = <span class="ruby-identifier">index</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">where</span>.<span class="ruby-identifier">to_a</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-identifier">key</span>(<span class="ruby-identifier">k</span>), <span class="ruby-identifier">v</span>.<span class="ruby-identifier">map!</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">l</span><span class="ruby-operator">|</span> <span class="ruby-identifier">key</span>(<span class="ruby-identifier">l</span>) }.<span class="ruby-identifier">sort!</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">empty?</span>
+  }
+
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-inspect" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inspect</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="inspect-source">
+            <pre><span class="ruby-comment"># File lib/page_rank.rb, line 95</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">inspect</span>
+  <span class="ruby-identifier">s</span> = <span class="ruby-string">&#39;#&lt;%s:0x%x&gt;&#39;</span> <span class="ruby-operator">%</span> [<span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>, <span class="ruby-identifier">object_id</span>]
+
+  <span class="ruby-node">%w[size count convergence max_iterations damping_factor]</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">s</span>.<span class="ruby-identifier">insert</span>(<span class="ruby-value">-2</span>, <span class="ruby-node">&quot; @#{v}=#{send(v).inspect}&quot;</span>)
+  }
+
+  <span class="ruby-identifier">s</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-rank" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">rank</span><span
+            class="method-args">(personalization = true)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="rank-source">
+            <pre><span class="ruby-comment"># File lib/page_rank.rb, line 121</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">rank</span>(<span class="ruby-identifier">personalization</span> = <span class="ruby-keyword">true</span>)
+  <span class="ruby-identifier">iv</span>, <span class="ruby-identifier">v</span> = <span class="ruby-identifier">initialization_vector</span>.<span class="ruby-identifier">dup</span>, <span class="ruby-identifier">personalization</span>
+
+  <span class="ruby-identifier">order</span>(<span class="ruby-identifier">iterate</span>(<span class="ruby-keyword">case</span> <span class="ruby-identifier">v</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-keyword">true</span>    <span class="ruby-keyword">then</span> <span class="ruby-identifier">iv</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">0</span>       <span class="ruby-keyword">then</span> <span class="ruby-identifier">iv</span>.<span class="ruby-identifier">set_zero</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Float</span>   <span class="ruby-keyword">then</span> <span class="ruby-identifier">iv</span>.<span class="ruby-identifier">set_all</span>(<span class="ruby-identifier">v</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Integer</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">iv</span>.<span class="ruby-identifier">set_all</span>(<span class="ruby-constant">Rational</span>(<span class="ruby-value">1</span>, <span class="ruby-identifier">v</span>))
+    <span class="ruby-keyword">else</span>              <span class="ruby-identifier">v</span>
+  <span class="ruby-keyword">end</span>)) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">empty?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-seed" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">seed</span><span
+            class="method-args">(list)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="seed-source">
+            <pre><span class="ruby-comment"># File lib/page_rank.rb, line 105</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">seed</span>(<span class="ruby-identifier">list</span>)
+  <span class="ruby-identifier">list</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">id</span>(<span class="ruby-identifier">k</span>) }
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-to_json" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_json</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="to_json-source">
+            <pre><span class="ruby-comment"># File lib/page_rank.rb, line 146</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_json</span>
+  <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">fast_generate</span>(<span class="ruby-identifier">to_h</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-to_table" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_table</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="to_table-source">
+            <pre><span class="ruby-comment"># File lib/page_rank.rb, line 150</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_table</span>
+  <span class="ruby-identifier">matrix</span>.<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">map</span>.<span class="ruby-identifier">with_index</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">r</span>, <span class="ruby-identifier">i</span><span class="ruby-operator">|</span> [<span class="ruby-identifier">key</span>(<span class="ruby-identifier">i</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>,
+    <span class="ruby-identifier">r</span>.<span class="ruby-identifier">map</span>.<span class="ruby-identifier">with_index</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span>, <span class="ruby-identifier">j</span><span class="ruby-operator">|</span> [<span class="ruby-identifier">key</span>(<span class="ruby-identifier">j</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">j</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>, <span class="ruby-identifier">v</span>] }] }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-iterate" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">iterate</span><span
+            class="method-args">(pv)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>pv ? Langville/Meyer 2012 : Page/Brin 1998</p>
+          
+          
+
+          
+          <div class="method-source-code" id="iterate-source">
+            <pre><span class="ruby-comment"># File lib/page_rank.rb, line 158</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">iterate</span>(<span class="ruby-identifier">pv</span>)
+  <span class="ruby-identifier">iter</span>, <span class="ruby-identifier">prev</span>, <span class="ruby-identifier">diff</span> = [], <span class="ruby-identifier">initialization_vector</span>.<span class="ruby-identifier">trans</span>, <span class="ruby-ivar">@divergence</span> = []
+
+  <span class="ruby-identifier">d</span>, <span class="ruby-identifier">dn</span> = <span class="ruby-value">1</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">df</span> = <span class="ruby-identifier">damping_factor</span>, <span class="ruby-identifier">dangling_nodes</span>
+  <span class="ruby-identifier">d</span> <span class="ruby-operator">/=</span> <span class="ruby-identifier">size</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">pv</span>
+
+  <span class="ruby-identifier">max_iterations</span>.<span class="ruby-identifier">times</span> {
+    <span class="ruby-identifier">curr</span> = <span class="ruby-identifier">df</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">prev</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">matrix</span>
+    <span class="ruby-identifier">iter</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">curr</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">pv</span> <span class="ruby-operator">?</span> (<span class="ruby-identifier">df</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">prev</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">dn</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">d</span>) <span class="ruby-operator">*</span> <span class="ruby-identifier">pv</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">d</span>
+
+    <span class="ruby-identifier">diff</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">delta</span> = (<span class="ruby-identifier">curr</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">prev</span>).<span class="ruby-identifier">asum</span>]
+    <span class="ruby-identifier">delta</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">convergence</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">break</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">prev</span> = <span class="ruby-identifier">curr</span>
+  }
+
+  <span class="ruby-ivar">@iterations</span> = <span class="ruby-identifier">iter</span>.<span class="ruby-identifier">size</span>
+
+  <span class="ruby-identifier">iter</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-order" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">order</span><span
+            class="method-args">(iter)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="order-source">
+            <pre><span class="ruby-comment"># File lib/page_rank.rb, line 177</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">order</span>(<span class="ruby-identifier">iter</span>)
+  <span class="ruby-identifier">order</span>, <span class="ruby-identifier">ranking</span>, <span class="ruby-identifier">prev</span> = [], <span class="ruby-ivar">@ranking</span> = [], <span class="ruby-ivar">@idmap</span>.<span class="ruby-identifier">to_a</span>
+
+  <span class="ruby-identifier">iter</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">ranking</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">prev</span> = <span class="ruby-ivar">@idmap</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">i</span><span class="ruby-operator">|</span> [<span class="ruby-identifier">k</span>, <span class="ruby-identifier">i</span>, <span class="ruby-identifier">t</span>[<span class="ruby-identifier">i</span>]] }
+      .<span class="ruby-identifier">sort_by</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">_</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span> [<span class="ruby-operator">-</span><span class="ruby-identifier">v</span>, <span class="ruby-identifier">prev</span>.<span class="ruby-identifier">index</span>(<span class="ruby-identifier">prev</span>.<span class="ruby-identifier">assoc</span>(<span class="ruby-identifier">k</span>))] } }
+
+  <span class="ruby-identifier">prev</span> = <span class="ruby-identifier">prev</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">i</span>,<span class="ruby-operator">|</span> <span class="ruby-identifier">order</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">k</span>; <span class="ruby-identifier">i</span> }
+
+  <span class="ruby-ivar">@divergence</span>.<span class="ruby-identifier">zip</span>(<span class="ruby-identifier">ranking</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">diff</span>, <span class="ruby-identifier">rank</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">diff</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">prev</span>.<span class="ruby-identifier">zip</span>(<span class="ruby-identifier">rank</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">delete_at</span>(<span class="ruby-value">1</span>) }).<span class="ruby-identifier">corr</span> }
+
+  <span class="ruby-identifier">order</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
