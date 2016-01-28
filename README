@@ -1,0 +1,47 @@
+= page_rank - PageRank implementation for Ruby
+
+== VERSION
+
+This documentation refers to page_rank version 0.0.0.
+
+
+== DESCRIPTION
+
+Calculates the PageRank[https://en.wikipedia.org/wiki/PageRank] of a network.
+
+
+== LINKS
+
+Documentation:: https://blackwinter.github.com/page_rank
+Source code::   https://github.com/blackwinter/page_rank
+RubyGem::       https://rubygems.org/gems/page_rank
+Travis CI::     https://travis-ci.org/blackwinter/page_rank
+
+
+== LITERATURE
+
+* Brin, S.; Page, L.: <em>{The Anatomy of a Large-Scale Hypertextual Web Search Engine}[http://ilpubs.stanford.edu:8090/361/]</em>. In: Proceedings of the seventh international conference on World Wide Web. Amsterdam: Elsevier, 1998. pp 107-117.
+* Langville, A.; Meyer, C.: <em>{Google's PageRank and Beyond: The Science of Search Engine Rankings}[http://press.princeton.edu/titles/8216.html]</em>. Princeton: Princeton University Press, 2012.
+
+
+== AUTHORS
+
+* Jens Wille <mailto:jens.wille@gmail.com>
+
+
+== LICENSE AND COPYRIGHT
+
+Copyright (C) 2016 Jens Wille
+
+page_rank is free software: you can redistribute it and/or modify it
+under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or (at your
+option) any later version.
+
+page_rank is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public
+License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with page_rank. If not, see <http://www.gnu.org/licenses/>.
